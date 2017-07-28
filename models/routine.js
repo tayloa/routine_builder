@@ -3,6 +3,7 @@ var routineSchema = new mongoose.Schema({
     title: String,
     description: String,
     image: {type: String, default: "http://cdn-maf2.heartyhosting.com/sites/muscleandfitness.com/files/styles/homepage_top_1440x500/public/media/mass-hero_0.png?itok=h45q5DuY"},
+    week: {type: Array, default: []},
     created: {type: Date, default: Date.now}
 });
 

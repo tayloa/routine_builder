@@ -5,7 +5,7 @@ var data = [
     {
         title: "Bicep Killer",
         description: "They say if you don't stand for something, you'll fall for anything. Well, I don't stand for curls and I'm falling in love with these gains.",
-        image: "http://fistintheair.com/wp-content/uploads/2011/04/168464_123490294388171_113112785425922_147663_4041141_n.jpg"},
+        image: "https://bodywhat.com/uploads/media/report/0001/09/thumb_8981_report_extra_eac14c103849acaa85f8ccbc4a1264414a066aca.png"},
     {
         title: "Tricep Killer",
         description: "Dumbbell flys aren't an exercise because that doesn't contain the word \"Bench\".",
@@ -24,9 +24,37 @@ function seedDB() {
             console.log(err);
         } else {
             console.log("removed all routines from the database");
+            // add routines that have exercises
+            data.forEach(function(seed){
+                Routine.create(seed, function(err, routine){
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("added a new routine");
+                        // create a weekly routine
+                        Week.create(
+                            {
+                                Sunday:    {type: Array, default: ["Rest"]},
+                                Monday:    {type: Array, default: ["Rest"]},
+                                Tuesday:   {type: Array, default: ["Rest"]},
+                                Wednesday: {type: Array, default: ["Rest"]},
+                                Thurdsday: {type: Array, default: ["Rest"]},
+                                Friday:    {type: Array, default: ["Rest"]},
+                                Saturday:  {type: Array, default: ["Rest"]}
+                            }, function(err, week){
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                routine.week = week;
+                                routine.save();
+                                console.log("added a new week to the routine");
+                            }
+                        });
+                    }
+                });
+            });
         }
     });   
-    // add routines that have exercises
 }
 
 module.exports = seedDB;
