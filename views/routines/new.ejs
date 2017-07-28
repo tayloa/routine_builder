@@ -1,0 +1,75 @@
+<% include ../partials/header %>
+
+<!--title-->
+<!--description-->
+<!--image (optional)-->
+<!--monday - add exercises - add reps x sets-->
+<!--tuesday-->
+<!--wednesday-->
+<!--thursday-->
+<!--friday--> 
+<!--satuday-->
+<!--sunday-->
+<!--tags-->
+
+<div class="ui main text container segment">
+  <h1 class="ui header">Submit a New Routine</h1>
+  <form action="/routines" method="POST" class="ui form">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="routine[title]" placeholder="title">
+    </div>
+    <div class="field">
+        <label>Description</label>
+        <textarea name="routine[description]"></textarea>
+    </div>
+    <div class="field">
+      <label>Image (optional)</label>
+      <input type="text" name="routine[image]" placeholder="image link">
+    </div>
+    <div class="field">
+      <button class="ui button green" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div class="ui main text container segment">
+  <div class="ui top attached tabular menu">
+    <a class="active item" data-tab="first">Sunday</a>
+    <a class="item" data-tab="second">Monday</a>
+    <a class="item" data-tab="third">Tuesday</a>
+    <a class="item" data-tab="fourth">Wednesday</a>
+    <a class="item" data-tab="fifth">Thursday</a>
+    <a class="item" data-tab="sixth">Friday</a>
+    <a class="item" data-tab="seventh">Saturday</a>
+  </div>
+  <div class="ui bottom attached active tab segment" data-tab="first">
+    Sunday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="second">
+    Monday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="third">
+    Tuesday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="fourth">
+    Wednesday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="fifth">
+    Thursday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="sixth">
+    Friday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="seventh">
+    Saturday
+  </div>
+  <button class="ui button medium teal">Add or Remove Exercises</button>
+</div>
+
+<script type="text/javascript">
+$('.menu .item')
+  .tab();
+</script>
+
+<% include ../partials/footer %>

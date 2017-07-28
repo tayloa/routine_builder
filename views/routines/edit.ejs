@@ -1,0 +1,144 @@
+<% include ../partials/header %>
+
+<!--title-->
+<!--description-->
+<!--image (optional)-->
+<!--monday - add exercises - add reps x sets-->
+<!--tuesday-->
+<!--wednesday-->
+<!--thursday-->
+<!--friday--> 
+<!--satuday-->
+<!--sunday-->
+<!--tags-->
+
+<div class="ui main text container segment">
+  <h1 class="ui header">Edit <%= routine.title %></h1>
+  <form action="/routines/<%= routine._id %>?_mehtod=PUT" method="POST" class="ui form">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="routine[title]" value="<%= routine.title %>">
+    </div>
+    <div class="field">
+        <label>Description</label>
+        <textarea name="routine[description]"><%= routine.description %></textarea>
+    </div>
+    <div class="field">
+      <label>Image (optional)</label>
+      <input type="text" name="routine[image]" value="<%= routine.image %>">
+    </div>
+    <div class="field">
+      <button class="ui button green" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div class="ui main text container segment">
+    <div class="ui seven doubling cards">
+      <div class="card teal-card">
+          <div class="header">Sunday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card blue-card">
+          <div class="header">Monday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card green-card">
+          <div class="header">Tuesday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card yellow-card">
+          <div class="header">Wednesday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card red-card">
+          <div class="header">Thursday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card teal-card">
+          <div class="header">Friday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card blue-card">
+          <div class="header">Saturday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="ui main text container segment">
+    <div class="ui seven doubling cards">
+      <div class="card teal-card">
+          <div class="header">Sunday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card blue-card">
+          <div class="header">Monday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card green-card">
+          <div class="header">Tuesday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card yellow-card">
+          <div class="header">Wednesday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card red-card">
+          <div class="header">Thursday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card teal-card">
+          <div class="header">Friday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+      <div class="card blue-card">
+          <div class="header">Saturday</div>
+          <div class="ui bottom attached button">
+          <i class="add icon"></i>
+              Add Friend
+          </div>
+      </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

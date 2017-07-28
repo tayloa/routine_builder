@@ -1,0 +1,27 @@
+.container.main{
+    margin-top: 7.0em;
+}
+
+#delete {
+    display: inline;
+}
+.red-card{
+    color: white;
+    background-color: #ff3860 !important;
+}
+.yellow-card{
+    color: black;
+    background-color: #ffdd57 !important;
+}
+.green-card{
+    color: white;
+    background-color: #23d160 !important;
+}
+.blue-card{
+    color: white;
+    background-color: #3273dc !important;
+}
+.teal-card{
+    color: white;
+    background-color: #00d1b2 !important;
+}

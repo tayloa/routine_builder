@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment" id="greeting">
+  <h2 class="ui huge header">Welcome to Routine Builder</h2>
+  <p>Start building your routine here</p>
+</div>
+
+<!-- Display Top Ten Routines-->
+<h1 class="ui header">Top Routines</h1>
+<div class="ui divider"></div>
+<div class="ui link cards">
+  <% routines.forEach(function(routine) { %>
+    <div class="card">
+    <div class="image">
+      <img src="<%= routine.image %>">
+    </div>
+    <div class="content">
+      <div class="header"><%= routine.title %></div>
+      <div class="meta">
+        <a>Followers</a>
+      </div>
+      <div class="description">
+        <p><%= routine.description.substring(0,30) %>...</p>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        Added in 2013
+      </span>
+      <span>
+        <i class="user icon"></i>
+        Avg. Rating: <%= routine.rating %>
+      </span>
+      <span class="right floated">
+        <a href="/routines/<%= routine._id %>">View</a>
+      </span>
+    </div>
+  </div>
+  <% }); %>
+</div>

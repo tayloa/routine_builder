@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment" id="greeting">
+  <h2 class="ui huge header"><%= routine.title %></h2>
+  <a class="ui orange basic button" href="/routines/ <%= routine._id %>/edit">Edit</a>
+  <form id="delete" action="/routines/ <%= routine._id %>?_method=DELETE" method="POST" class="ui form"> 
+    <button class="ui red basic button">Delete</button>
+  </form>
+  <p><%= routine.description %></p>
+</div>
+
+<div class="ui main text container segment">
+  <div class="ui top attached tabular menu">
+    <a class="active item teal-card" data-tab="first">Sunday</a>
+    <a class="item blue-card" data-tab="second">Monday</a>
+    <a class="item green-card" data-tab="third">Tuesday</a>
+    <a class="item yellow-card" data-tab="fourth">Wednesday</a>
+    <a class="item red-card" data-tab="fifth">Thursday</a>
+    <a class="item teal-card" data-tab="sixth">Friday</a>
+    <a class="item blue-card" data-tab="seventh">Saturday</a>
+  </div>
+  <div class="ui bottom attached active tab segment" data-tab="first">
+    Sunday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="second">
+    Monday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="third">
+    Tuesday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="fourth">
+    Wednesday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="fifth">
+    Thursday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="sixth">
+    Friday
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="seventh">
+    Saturday
+  </div>
+  <button class="ui button medium teal">Add or Remove Exercises</button>
+</div>
+
+
+<script type="text/javascript">
+$('.menu .item')
+  .tab();
+</script>
+
+<% include ../partials/footer %>
