@@ -4,10 +4,11 @@ var express        = require("express"),
     bodyParser     = require("body-parser"),
     methodOverride = require("method-override"),
     Routine        = require("./models/routine"),
+    Week           = require("./models/week"),
     seedDB         = require("./seeds");
     
 seedDB();
-mongoose.connect("mongodb://localhost/routine_builder_apps");
+mongoose.connect("mongodb://localhost/routine_builder_app");
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -65,11 +66,12 @@ app.post("/routines", function(req, res){
 
 // SHOW
 app.get("/routines/:id", function(req, res) {
-    Routine.findById(req.params.id, function(err, foundRoutine){
+    Routine.findById(req.params.id).populate("week").exec(function(err, foundRoutine){
         if (err) {
             console.log(err);
             res.redirect("/routines");
         } else {
+            console.log(foundRoutine.week);
             res.render("routines/show", {routine : foundRoutine});
         }
     });

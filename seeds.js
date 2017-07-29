@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var Routine = require("./models/routine");
+var Week = require("./models/week");
 
 var data = [
     {
@@ -34,13 +35,13 @@ function seedDB() {
                         // create a weekly routine
                         Week.create(
                             {
-                                Sunday:    {type: Array, default: ["Rest"]},
-                                Monday:    {type: Array, default: ["Rest"]},
-                                Tuesday:   {type: Array, default: ["Rest"]},
-                                Wednesday: {type: Array, default: ["Rest"]},
-                                Thurdsday: {type: Array, default: ["Rest"]},
-                                Friday:    {type: Array, default: ["Rest"]},
-                                Saturday:  {type: Array, default: ["Rest"]}
+                                sunday: ["Bicep Curls","Dips"],
+                                monday: ["Rest"],
+                                tuesday: ["Cardio"],
+                                wednesday: ["Stretch"],
+                                thurdsday: ["Curls", "Tricep Stuff"],
+                                friday:    ["Rest"],
+                                saturday:  ["Squats","Deadlift"]
                             }, function(err, week){
                             if (err) {
                                 console.log(err);
