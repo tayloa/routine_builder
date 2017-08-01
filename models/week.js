@@ -4,7 +4,7 @@ var weekSchema = mongoose.Schema({
     monday: ["Rest"],
     tuesday: ["Rest"],
     wednesday: ["Rest"],
-    thurdsday: ["Rest"],
+    thursday: ["Rest"],
     friday:    ["Rest"],
     saturday:  ["Rest"]
 });

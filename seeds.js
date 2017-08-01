@@ -39,7 +39,7 @@ function seedDB() {
                                 monday: ["Rest"],
                                 tuesday: ["Cardio"],
                                 wednesday: ["Stretch"],
-                                thurdsday: ["Curls", "Tricep Stuff"],
+                                thursday: ["Curls", "Tricep Stuff"],
                                 friday:    ["Rest"],
                                 saturday:  ["Squats","Deadlift"]
                             }, function(err, week){
