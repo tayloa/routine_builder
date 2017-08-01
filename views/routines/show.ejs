@@ -2,7 +2,7 @@
 
 <div class="ui main text container segment" id="greeting">
   <h2 class="ui huge header"><%= routine.title %></h2>
-  <a class="ui orange basic button" href="/routines/ <%= routine._id %>/edit">Edit</a>
+  <a class="ui orange basic button" href="/routines/<%= routine._id %>/edit">Edit</a>
   <form id="delete" action="/routines/ <%= routine._id %>?_method=DELETE" method="POST" class="ui form"> 
     <button class="ui red basic button">Delete</button>
   </form>

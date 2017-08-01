@@ -71,7 +71,6 @@ app.get("/routines/:id", function(req, res) {
             console.log(err);
             res.redirect("/routines");
         } else {
-            console.log(foundRoutine.week);
             res.render("routines/show", {routine : foundRoutine});
         }
     });
