@@ -9,3 +9,4 @@ Current Features:
 Upcoming Features:
 - User authentication
 - Tags (sort routines my muscles used/ intensity/ goals)
+- Fancy minimalist name like every application has
