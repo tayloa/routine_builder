@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 //ss quizlet for ui inspiration
 //need data base of exersises
-//need table to store routine info
 //need table to store rep info
 
 // LANDING
