@@ -18,6 +18,10 @@ var data = [
     }
 ];
 
+var exercises = [
+  
+];
+
 function seedDB() {
     // clear database
     Routine.remove({}, function(err){
@@ -35,6 +39,7 @@ function seedDB() {
                         // create a weekly routine
                         Week.create(
                             {
+                                loday: []
                                 sunday: ["Bicep Curls","Dips"],
                                 monday: ["Rest"],
                                 tuesday: ["Cardio"],

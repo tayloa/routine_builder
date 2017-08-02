@@ -5,6 +5,7 @@ var express        = require("express"),
     methodOverride = require("method-override"),
     Routine        = require("./models/routine"),
     Week           = require("./models/week"),
+    Exercise       = require("./models/exercise"),
     seedDB         = require("./seeds");
     
 seedDB();
@@ -17,17 +18,6 @@ app.use(methodOverride("_method"));
 //need data base of exersises
 //need table to store routine info
 //need table to store rep info
-
-// var exercises = [
-//     {name: "Bicep Curl"},
-//     {name: "Concentration Curl"},
-//     {name: "Preacher Curl"},
-// ];
-// var routines = [
-//     {   title: "BICEP-tennial Man",exercises: [exercises], description: "BICEP GAINS", rating: 5,
-//         image: "https://wallpaperscraft.com/image/biceps_muscle_strength_hand_jock_93490_1920x1080.jpg"
-//     },
-// ];
 
 // LANDING
 app.get("/", function(req, res) {
@@ -72,6 +62,7 @@ app.get("/routines/:id", function(req, res) {
             res.redirect("/routines");
         } else {
             res.render("routines/show", {routine : foundRoutine});
+            console.log(foundRoutine.week.loday);
         }
     });
 });

@@ -1,10 +1,3 @@
-// A routine will consist of:
-//     title,
-//     description,
-//     cover image,
-//     weekly routine,
-//     creation date
-
 var mongoose = require("mongoose");
 var routineSchema = new mongoose.Schema({
     title: String,
