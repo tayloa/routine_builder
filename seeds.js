@@ -3,7 +3,7 @@ var Routine = require("./models/routine");
 var Week = require("./models/week");
 var Exercise = require("./models/exercise");
 
-var data = [
+var RoutineData = [
     {
         title: "Bicep Killer",
         description: "They say if you don't stand for something, you'll fall for anything. Well, I don't stand for curls and I'm falling in love with these gains.",
@@ -19,7 +19,8 @@ var data = [
     }
 ];
 
-var exercises = [
+
+var ExerciseData = [
     {
         name: "Rest",
         reps: "50",
@@ -35,7 +36,31 @@ var exercises = [
     }
 ];
 
+var WeekData = [
+    {
+        loday: [],
+        sunday: ["Bicep Curls","Dips"],
+        monday: ["Rest"],
+        tuesday: ["Cardio"],
+        wednesday: ["Stretch"],
+        thursday: ["Curls", "Tricep Stuff"],
+        friday:    ["Rest"],
+        saturday:  ["Squats","Deadlift"]
+    }
+];
+
+
 function seedDB() {
+    // create exercises
+    ExerciseData.forEach(function(seed) {
+        Exercise.create(seed, function(err, exercise){
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Created an exercise");
+            }
+      });    
+    });
     // clear database
     Routine.remove({}, function(err){
         if (err) {
@@ -43,26 +68,26 @@ function seedDB() {
         } else {
             console.log("removed all routines from the database");
             // add routines that have exercises
-            data.forEach(function(seed){
+            RoutineData.forEach(function(seed){
                 Routine.create(seed, function(err, routine){
                     if (err) {
                         console.log(err);
                     } else {
                         console.log("added a new routine");
                         // create a weekly routine
-                        Week.create(
-                            {
-                                sunday: ["Bicep Curls","Dips"],
-                                monday: ["Rest"],
-                                tuesday: ["Cardio"],
-                                wednesday: ["Stretch"],
-                                thursday: ["Curls", "Tricep Stuff"],
-                                friday:    ["Rest"],
-                                saturday:  ["Squats","Deadlift"]
-                            }, function(err, week){
+                        Week.create(WeekData[0], function(err, week){
                             if (err) {
                                 console.log(err);
                             } else {
+                                Exercise.find({}, function(err, exercise) {
+                                    if (err) {
+                                        console.log(err);
+                                    } else {
+                                        week.loday.push(exercise);
+                                        week.save();
+                                        // console.log(exercise);
+                                    }
+                                });
                                 routine.week = week;
                                 routine.save();
                                 console.log("added a new week to the routine");
@@ -70,22 +95,6 @@ function seedDB() {
                         });
                     }
                 });
-            });
-            exercises.forEach(function(seed) {
-               Exercise.create(seed, function(err, exercise){
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log("Created new exercise");
-                    }
-               });    
-            });
-            Exercise.find({}, function(err, exercise) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(exercise);
-                }
             });
         }
     });
