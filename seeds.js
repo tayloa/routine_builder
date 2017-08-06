@@ -51,16 +51,18 @@ var WeekData = [
 
 
 function seedDB() {
-    // create exercises
+     // create exercises
     ExerciseData.forEach(function(seed) {
         Exercise.create(seed, function(err, exercise){
             if (err) {
                 console.log(err);
             } else {
-                console.log("Created an exercise");
+                WeekData[0].loday.push(exercise);
+                console.log("created new exercises");
             }
       });    
     });
+    console.log(WeekData[0]);
     // clear database
     Routine.remove({}, function(err){
         if (err) {
@@ -79,15 +81,6 @@ function seedDB() {
                             if (err) {
                                 console.log(err);
                             } else {
-                                Exercise.find({}, function(err, exercise) {
-                                    if (err) {
-                                        console.log(err);
-                                    } else {
-                                        week.loday.push(exercise);
-                                        week.save();
-                                        // console.log(exercise);
-                                    }
-                                });
                                 routine.week = week;
                                 routine.save();
                                 console.log("added a new week to the routine");
