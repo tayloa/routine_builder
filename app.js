@@ -47,10 +47,10 @@ app.post("/routines", function(req, res){
             console.log(err);
             res.render("routines/new");
         } else {
+            // add it to a the homepage and redirect
             res.redirect("routines");
         }
     });
-    // add it to a the homepage and redirect
 });
 
 // SHOW

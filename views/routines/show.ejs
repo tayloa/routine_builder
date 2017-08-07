@@ -12,6 +12,7 @@
     <a class="item red-card" data-tab="fifth">Thursday</a>
     <a class="item teal-card" data-tab="sixth">Friday</a>
     <a class="item blue-card" data-tab="seventh">Saturday</a>
+    <a class="item black-card" data-tab="eigth">Loday</a>
   </div>
   
   <div class="ui bottom attached active tab segment" data-tab="first">
@@ -99,6 +100,22 @@
         <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
         <div class="content">
           <div class="header"><%= exercise %></div>
+          An excellent companion
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="ui bottom attached active tab segment" data-tab="eigth">
+    <div class="ui celled list">
+      <% routine.week.loday.forEach(function(exercise){ %>
+        <div class="item">
+        <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+        <div class="content">
+          <div class="header"><%= exercise.name %></div>
+          <div class="header"><%= exercise.sets %></div>
+          <div class="header"><%= exercise.reps %></div>
+
           An excellent companion
         </div>
       </div>
