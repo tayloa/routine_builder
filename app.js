@@ -5,7 +5,6 @@ var express        = require("express"),
     methodOverride = require("method-override"),
     Routine        = require("./models/routine"),
     Week           = require("./models/week"),
-    Exercise       = require("./models/exercise"),
     seedDB         = require("./seeds");
     
 seedDB();
@@ -61,7 +60,6 @@ app.get("/routines/:id", function(req, res) {
             res.redirect("/routines");
         } else {
             res.render("routines/show", {routine : foundRoutine});
-            console.log(foundRoutine.week.loday);
         }
     });
 });

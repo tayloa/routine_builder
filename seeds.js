@@ -1,7 +1,6 @@
 var mongoose = require("mongoose");
 var Routine = require("./models/routine");
 var Week = require("./models/week");
-var Exercise = require("./models/exercise");
 
 var RoutineData = [
     {
@@ -19,26 +18,8 @@ var RoutineData = [
     }
 ];
 
-
-var ExerciseData = [
-    {
-        name: "Rest",
-        reps: "50",
-        notes: []
-    },
-    {
-        name: "Rest",
-        sets: "4",
-    },
-    {
-        name: "Dumbell Lateral Raise",
-        notes: ["Do every set to failure"]
-    }
-];
-
 var WeekData = [
     {
-        loday: [],
         sunday: ["Bicep Curls","Dips"],
         monday: ["Rest"],
         tuesday: ["Cardio"],
@@ -51,18 +32,6 @@ var WeekData = [
 
 
 function seedDB() {
-     // create exercises
-    ExerciseData.forEach(function(seed) {
-        Exercise.create(seed, function(err, exercise){
-            if (err) {
-                console.log(err);
-            } else {
-                WeekData[0].loday.push(exercise);
-                console.log("created new exercises");
-            }
-      });    
-    });
-    console.log(WeekData[0]);
     // clear database
     Routine.remove({}, function(err){
         if (err) {

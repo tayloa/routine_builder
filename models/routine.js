@@ -4,6 +4,7 @@ var routineSchema = new mongoose.Schema({
     description: String,
     image: {type: String, default: "http://cdn-maf2.heartyhosting.com/sites/muscleandfitness.com/files/styles/homepage_top_1440x500/public/media/mass-hero_0.png?itok=h45q5DuY"},
     week: {type: mongoose.Schema.Types.ObjectId, ref:"Week" },
+    tags: [],
     created: {type: Date, default: Date.now}
 });
 
