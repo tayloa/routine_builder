@@ -15,64 +15,158 @@
   </div>
   
   <div class="ui bottom attached active tab segment" data-tab="first">
-    <div class="ui celled list">
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
       <% routine.week.monday.forEach(function(exercise){ %>
-        <table class="ui selectable celled table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Sets</th>
-              <th>Reps</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="warning">
-              <td>John</td>
-              <td>No Action</td>
-              <td>None</td>
-              <td>None</td>
-            </tr>
-          </tbody>
-        </table>
-        <% }); %>
-      </div>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
+      <% }); %>
+      </tbody>
+    </table>
   </div>
   <div class="ui bottom attached tab segment" data-tab="second">
-    <div class="ui celled list">
-      <% routine.week.tuesday.forEach(function(exercise){ %>
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% routine.week.monday.forEach(function(exercise){ %>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
       <% }); %>
-    </div>
+      </tbody>
+    </table>
   </div>
   <div class="ui bottom attached tab segment" data-tab="third">
-    <div class="ui celled list">
-      <% routine.week.wednesday.forEach(function(exercise){ %>
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% routine.week.monday.forEach(function(exercise){ %>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
       <% }); %>
-    </div>
+      </tbody>
+    </table>
   </div>
   <div class="ui bottom attached tab segment" data-tab="fourth">
-    <div class="ui celled list">
-      <% routine.week.thursday.forEach(function(exercise){ %>
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% routine.week.monday.forEach(function(exercise){ %>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
       <% }); %>
-    </div>
+      </tbody>
+    </table>
   </div>
   <div class="ui bottom attached tab segment" data-tab="fifth">
-    <div class="ui celled list">
-      <% routine.week.friday.forEach(function(exercise){ %>
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% routine.week.monday.forEach(function(exercise){ %>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
       <% }); %>
-    </div>
+      </tbody>
+    </table>
   </div>
   <div class="ui bottom attached tab segment" data-tab="sixth">
-    <div class="ui celled list">
-      <% routine.week.saturday.forEach(function(exercise){ %>
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% routine.week.monday.forEach(function(exercise){ %>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
       <% }); %>
-    </div>
+      </tbody>
+    </table>
   </div>
   <div class="ui bottom attached tab segment" data-tab="seventh">
-    <div class="ui celled list">
-      <% routine.week.sunday.forEach(function(exercise){ %>
+    <table class="ui selectable celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% routine.week.monday.forEach(function(exercise){ %>
+        <tr>
+          <td>John</td>
+          <td>No Action</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
       <% }); %>
-    </div>
+      </tbody>
+    </table>
   </div>
   <a href="/routines/<%= routine._id %>/edit" class="ui button medium teal">Add or Remove Exercises</a>
 </div>
